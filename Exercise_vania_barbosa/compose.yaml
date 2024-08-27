@@ -1,0 +1,40 @@
+version: "3.1"
+services:
+  db:
+    image: mysql
+    container_name: db   #name
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: school
+    ports:
+      - "3308:3306"
+  phpmyadmin:
+    image: arm64v8/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8080:80"
+  php-apache-environment:
+    container_name: apache-php   #name
+    environment:
+      - max_upload=100M
+    build:
+      context: ./php
+      dockerfile: dockerfile
+    volumes:
+      - ./php/src:/var/www/html/ #Path to folder in windows : Path to folder in Linux
+    ports:
+      - 8000:80
+
+
+      # Some terminal command lines
+
+      # docker compose build // build docker
+      # docker compose up // starts docker , after loading open docker
+      # docekr compose down // stops docker
+      # docker compose up -d //detached , keep access to terminal 
+      # docekr compose down -v // kill and delete container  

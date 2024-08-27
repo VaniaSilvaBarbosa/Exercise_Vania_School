@@ -1,0 +1,270 @@
+/*----------Global Reset----------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    background-color: #083e8517;
+    min-height: 100vh;
+}
+/* CSS Variables for Consistent Styling */
+:root{
+    --main-white: #fefeff;
+    --main-blue: #043d86;
+    --main-button-blue: #206afe;
+    --main-red: #fe5671;
+    --main-green: #00cb81;
+}
+
+/*----------header section----------*/
+/* Style for the header section, centered and with a shadow */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: 0px 17px 21px -17px rgba(0,0,0,0.1);
+    background-color: var(--main-white);
+    font-family: "Bodoni Moda SC", serif;
+    font-style: italic;
+}
+
+header i{
+    /* Padding for icons in the header */
+    padding-right: 20px;
+}
+/*----------SECTIONS----------*/
+/* Common styling for different sections, with consistent margins and padding */
+.students-table-section,
+.student-info-section,
+.student-modify-section,
+.student-creation-section{
+    width: 90%;
+    margin: 50px auto;
+    background-color: var(--main-white);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/*----------buttons----------*/
+/* Flexbox layout for buttons container */
+#td_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+/* Edit button styling */
+#btn_edit{
+    background-color: var(--main-button-blue);
+    border: none !important;
+    padding: 11px !important;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Delete button styling */
+#btn_delete{
+    background-color: var(--main-red);
+    border: none !important;
+    padding: 11px !important;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Modify student button styling */
+#btn_modify_student{
+    background-color: var(--main-blue);
+    color: var(--main-white);
+    width: 200px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+/* Create student button styling */
+#btn_create_student{
+    background-color: var(--main-blue);
+    color: var(--main-white);
+    width: 200px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+/*----------table------------*/
+/* Styling for tables, including headers and cells */
+table{
+    width: 100%;
+}
+
+table th{
+    padding: 10px 20px;
+}
+
+table td{
+    padding: 10px 20px;
+    text-align: center;
+}
+/* Styling for links inside table cells */
+table td a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+/* Specific styling for the first link inside a table cell */
+table td a:nth-child(1){
+    background-color: var(--main-green);
+}
+/* Alternate row background color for better readability */
+table tbody tr:nth-child(odd){
+    background-color: #f6f8fd;
+}
+
+/*----------forms----------*/
+/* Common styling for forms inside the modify and creation sections */
+.student-modify-section form,
+.student-creation-section form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+}
+
+.student-modify-section form label,
+.student-creation-section form label{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.student-modify-section form input,
+.student-creation-section form input{
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--main-blue);
+}
+
+/*----------students table section----------*/
+/* Styling for div within the students table section */
+.students-table-section--div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+/* Styling for links within students table section */
+.students-table-section--div a{
+    text-decoration: none;
+    background-color: var(--main-blue);
+    color: var(--main-white);
+    padding: 10px;
+    border-radius: 5px;
+}
+/* Buttons within the student info section, aligned to the right */
+div.student-info-section--div-buttons {
+    display: flex !important;
+    justify-content: end !important;
+}
+
+/*---------student view section---------*/
+/* Styling for links in the student info section */
+.student-info-section a{
+    text-decoration: none;
+    background-color: var(--main-blue);
+    color: var(--main-white);
+    padding: 10px;
+    border-radius: 5px;
+}
+/* Styling for the first div in the student info section */
+.student-info-section--div-first{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 500px;
+    margin: auto;
+    border-bottom: rgba(128, 128, 128, 0.509) 1px solid;
+}
+/* Styling for the image inside the student info section */
+.student-info-section--div-first img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+/* Styling for the h2 element inside the first div */
+.student-info-section--div-first h2{
+    margin-bottom: 20px;
+}
+/* Styling for the second div in the student info section */
+.student-info-section--div-second{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px 0;
+}
+/* Styling for paragraphs inside the second div */
+.student-info-section--div-second  p{
+    margin: 10px 10px;
+}
+/* Styling for the h3 element inside the second div */
+.student-info-section--div-second h3{
+    margin: 20px 0;
+    color: var(--main-blue);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/*---------student modify section and creation section---------*/
+/* Common styling for links inside the modify and creation sections */
+.student-modify-section a,
+.student-creation-section a{
+    text-decoration: none;
+    background-color: var(--main-blue);
+    color: var(--main-white);
+    padding: 10px;
+    border-radius: 5px;
+}
+/* Common styling for headers inside the modify and creation sections */
+.student-modify-section h2,
+.student-creation-section h2{
+    text-align: center;
+    margin: 20px;
+}
+/* Styling for checkboxes */
+input[type='checkbox']{
+    margin: 20px;
+}
+
+/*-------search bar-------*/
+/* Styling for the search bar form */
+.search-bar--form{
+    width: 100%;
+    margin: 20px 0;
+}
+/* Styling for input fields in the search bar */
+.search-bar--form input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--main-blue);
+}
+
+/*-------footer section-------*/
+/* Styling for the footer, including background color and shadow */
+footer{
+    background-color: var(--main-white);
+    padding: 20px;
+    text-align: center;
+    color: var(--main-blue);
+    margin-top: auto;
+    box-shadow: 0px -17px 21px -17px rgba(0,0,0,0.1);
+}
